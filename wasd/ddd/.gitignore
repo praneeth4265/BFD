@@ -18,8 +18,6 @@ ENV/
 .ipynb_checkpoints
 
 # PyTorch
-*.pth
-*.pt
 
 # Training outputs (keep structure but ignore large files)
 training_results/*.json
