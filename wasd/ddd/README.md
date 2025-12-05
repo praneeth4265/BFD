@@ -51,8 +51,8 @@ A deep learning system for binary classification of bone fracture X-rays into **
 ### 1. Setup Environment
 ```bash
 # Clone repository
-git clone <repository-url>
-cd ddd
+git clone https://github.com/praneeth4265/BFD.git
+cd BFD
 
 # Activate virtual environment
 source ml_env_linux/bin/activate
@@ -60,6 +60,24 @@ source ml_env_linux/bin/activate
 # Verify installation
 python -c "import torch; print(f'PyTorch {torch.__version__}')"
 ```
+
+### 2. Download Pre-trained Models
+⚠️ **Model weights are not included in the repository due to size (1.5GB total)**
+
+**Option A: Download from GitHub Releases**
+- Go to [Releases](https://github.com/praneeth4265/BFD/releases)
+- Download the model files
+- Place them in `bone_fracture_detection/models/` directory
+
+**Option B: Train Your Own**
+```bash
+python train_convnext_improved.py  # ~17 min on RTX 4060
+python train_efficientnetv2_improved.py  # ~6 min on RTX 4060
+```
+
+**Required Model Files:**
+- `convnext_v2_improved_best.pth` (1005MB) - 98.88% accuracy
+- `efficientnetv2_s_improved_best.pth` (233MB) - 96.65% accuracy
 
 ### 2. Run Tests
 ```bash
