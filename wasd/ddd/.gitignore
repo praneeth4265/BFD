@@ -17,15 +17,6 @@ ENV/
 # Jupyter Notebook
 .ipynb_checkpoints
 
-# PyTorch
-
-# Training outputs (keep structure but ignore large files)
-training_results/*.json
-training_results/*.png
-
-# Dataset (optional - uncomment if dataset is too large)
-# Bone Fracture X-ray Dataset Simple vs. Comminuted Fractures/
-
 # IDE
 .vscode/
 .idea/
@@ -37,11 +28,9 @@ training_results/*.png
 .DS_Store
 Thumbs.db
 
-# Output directories (keep folder structure)
-explainability_outputs/*.png
-explainability_outputs/*.jpg
-batch_test_results/*.png
-batch_test_results/*.jpg
+# Dataset (large — download separately)
+Bone Fracture X-ray Dataset Simple vs. Comminuted Fractures/
+datasets/
 
 # Logs
 *.log

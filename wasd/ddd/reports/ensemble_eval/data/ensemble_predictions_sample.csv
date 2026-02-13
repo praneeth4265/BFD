@@ -1,0 +1,6 @@
+image_path,prediction,confidence,agreement_count,prob_comminuted_fracture,prob_no_fracture,prob_simple_fracture
+datasets/augmented/test/comminuted_fracture/1000_Comminuted Bone Fracture_brightness_contrast.jpg,comminuted_fracture,0.999940,4,0.999940,0.000009,0.000051
+datasets/augmented/test/comminuted_fracture/1001_Comminuted Bone Fracture_rotate.jpg,comminuted_fracture,0.987242,4,0.987242,0.005185,0.007573
+datasets/augmented/test/comminuted_fracture/1003_Comminuted Bone Fracture_brightness_contrast.jpg,comminuted_fracture,0.998583,4,0.998583,0.000057,0.001360
+datasets/augmented/test/comminuted_fracture/1005_Comminuted Bone Fracture_flip_vertical.jpg,comminuted_fracture,0.999955,4,0.999955,0.000014,0.000031
+datasets/augmented/test/comminuted_fracture/1007_Comminuted Bone Fracture_zoom.jpg,comminuted_fracture,0.999917,4,0.999917,0.000016,0.000067

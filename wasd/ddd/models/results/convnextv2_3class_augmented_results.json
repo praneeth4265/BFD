@@ -1,0 +1,66 @@
+{
+  "model": "convnextv2_base.fcmae_ft_in22k_in1k",
+  "num_classes": 3,
+  "classes": [
+    "comminuted_fracture",
+    "no_fracture",
+    "simple_fracture"
+  ],
+  "img_size": 224,
+  "checkpoint_epoch": 5,
+  "checkpoint_val_acc": 99.87004548408058,
+  "test_acc": 99.57819597663854,
+  "test_samples": 3082,
+  "evaluation_time_seconds": 390.27895641326904,
+  "confusion_matrix": [
+    [
+      1101,
+      0,
+      6
+    ],
+    [
+      3,
+      1024,
+      0
+    ],
+    [
+      4,
+      0,
+      944
+    ]
+  ],
+  "classification_report": {
+    "comminuted_fracture": {
+      "precision": 0.9936823104693141,
+      "recall": 0.994579945799458,
+      "f1-score": 0.9941309255079007,
+      "support": 1107.0
+    },
+    "no_fracture": {
+      "precision": 1.0,
+      "recall": 0.997078870496592,
+      "f1-score": 0.9985372988785958,
+      "support": 1027.0
+    },
+    "simple_fracture": {
+      "precision": 0.9936842105263158,
+      "recall": 0.9957805907172996,
+      "f1-score": 0.9947312961011591,
+      "support": 948.0
+    },
+    "accuracy": 0.9957819597663855,
+    "macro avg": {
+      "precision": 0.9957888403318766,
+      "recall": 0.9958131356711165,
+      "f1-score": 0.9957998401625519,
+      "support": 3082.0
+    },
+    "weighted avg": {
+      "precision": 0.9957881081338347,
+      "recall": 0.9957819597663855,
+      "f1-score": 0.9957839095358413,
+      "support": 3082.0
+    }
+  },
+  "evaluated_at": "2026-02-07T12:17:08.579225"
+}

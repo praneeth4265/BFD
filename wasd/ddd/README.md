@@ -79,6 +79,37 @@ python train_efficientnetv2_improved.py  # ~6 min on RTX 4060
 - `convnext_v2_improved_best.pth` (1005MB) - 98.88% accuracy
 - `efficientnetv2_s_improved_best.pth` (233MB) - 96.65% accuracy
 
+---
+
+## 📄 Reporting Utilities
+
+This repo includes scripts to generate evaluation reports and per-model PDFs from
+the ensemble evaluation artifacts stored in `project_reports/ensemble_eval/`.
+
+**Per-model detailed PDFs:**
+
+```bash
+python generate_model_reports.py
+```
+
+Outputs are written to `project_reports/ensemble_eval/model_reports/`.
+
+**Ensemble detailed PDF:**
+
+```bash
+python generate_ensemble_detailed_report.py
+```
+
+This creates `project_reports/ensemble_eval/model_reports/ensemble_detailed_report.pdf`.
+
+**Interpretability (Grad-CAM):**
+
+```bash
+python interpretability_analysis.py
+```
+
+Outputs are saved under `project_reports/ensemble_eval/interpretability/`.
+
 ### 2. Run Tests
 ```bash
 # Quick test with 3 random images

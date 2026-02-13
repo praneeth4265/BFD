@@ -1,0 +1,27 @@
+{
+  "total_samples": 3082,
+  "misclassified_count": 2,
+  "disagreement_count": 30,
+  "errors_by_true": {
+    "comminuted_fracture": 0,
+    "no_fracture": 2,
+    "simple_fracture": 0
+  },
+  "errors_by_pair": {
+    "comminuted_fracture": {
+      "comminuted_fracture": 0,
+      "no_fracture": 0,
+      "simple_fracture": 0
+    },
+    "no_fracture": {
+      "comminuted_fracture": 2,
+      "no_fracture": 0,
+      "simple_fracture": 0
+    },
+    "simple_fracture": {
+      "comminuted_fracture": 0,
+      "no_fracture": 0,
+      "simple_fracture": 0
+    }
+  }
+}
