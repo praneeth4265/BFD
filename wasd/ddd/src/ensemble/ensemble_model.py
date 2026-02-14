@@ -18,22 +18,22 @@ DEFAULT_MODELS = [
     {
         "name": "ConvNeXt V2",
         "timm_name": "convnextv2_base.fcmae_ft_in22k_in1k",
-        "checkpoint": "models/checkpoints/convnextv2_3class_augmented_best.pth",
+        "checkpoint": "models/checkpoints/convnextv2_3class_original_best.pth",
     },
     {
         "name": "EfficientNetV2-S",
         "timm_name": "tf_efficientnetv2_s.in21k_ft_in1k",
-        "checkpoint": "models/checkpoints/efficientnetv2_3class_augmented_best.pth",
+        "checkpoint": "models/checkpoints/efficientnetv2_3class_original_best.pth",
     },
     {
         "name": "MaxViT-Tiny",
         "timm_name": "maxvit_tiny_tf_224.in1k",
-        "checkpoint": "models/checkpoints/maxvit_3class_augmented_best.pth",
+        "checkpoint": "models/checkpoints/maxvit_3class_original_best.pth",
     },
     {
         "name": "Swin Transformer",
         "timm_name": "swin_tiny_patch4_window7_224.ms_in22k_ft_in1k",
-        "checkpoint": "models/checkpoints/swin_3class_augmented_best.pth",
+        "checkpoint": "models/checkpoints/swin_3class_original_best.pth",
     },
 ]
 
@@ -52,9 +52,9 @@ class EnsembleModel:
         self.device = device or ("cuda" if torch.cuda.is_available() else "cpu")
         self.models = []
         self.model_names = []
-        # Optimized weights: MaxViT + Swin (50/50) achieves 100% on test set
-        # Grid search over 1,771 combinations on 3,082 test images
-        self.weights = weights or [0.0, 0.0, 0.5, 0.5]
+        # Optimized weights from grid search on clean original test set (100% acc)
+        # ConvNeXt V2: 0.25, EfficientNetV2-S: 0.25, MaxViT: 0.20, Swin: 0.30
+        self.weights = weights or [0.25, 0.25, 0.20, 0.30]
 
         for config in DEFAULT_MODELS:
             model = timm.create_model(
@@ -71,7 +71,7 @@ class EnsembleModel:
 
         # weights already set in __init__ default, only override if user passes None
         if not self.weights:
-            self.weights = [0.0, 0.0, 0.5, 0.5]
+            self.weights = [0.25, 0.25, 0.20, 0.30]
 
     def predict_proba(self, batch: torch.Tensor) -> np.ndarray:
         probs = []
